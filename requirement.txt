@@ -1,0 +1,5 @@
+protobuf==3.20.*
+numpy
+Pillow
+mediapipe
+opencv-python
