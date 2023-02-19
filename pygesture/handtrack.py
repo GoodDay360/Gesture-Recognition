@@ -1,12 +1,13 @@
-import cv2, os
+import cv2
 import mediapipe as mp
 from collections import namedtuple
 
 class handDetector():
-    def __init__(self, mode=False, maxHands=2, modelComplex=1, detectionCon=0.5, trackCon=0.5):
+    def __init__(self, mode=False, maxHand=2, modelComplex=1, detectionCon=0.5, trackCon=0.5, drawLandmark=True):
         self.mpHands = mp.solutions.hands
         self.mpDraw = mp.solutions.drawing_utils
-        self.hands = self.mpHands.Hands(mode, maxHands, modelComplex, detectionCon, trackCon)
+        self.hands = self.mpHands.Hands(mode, maxHand, modelComplex, detectionCon, trackCon)
+        self.drawLandmark = drawLandmark
     
     def getCoord(self,lm):
         h, w, c = self.img.shape
@@ -29,7 +30,8 @@ class handDetector():
                 else:
                     label = "Left"
                     color = (255,0,0) #Blue
-                self.mpDraw.draw_landmarks(self.img, handLms, self.mpHands.HAND_CONNECTIONS, 
+                if self.drawLandmark:
+                    self.mpDraw.draw_landmarks(self.img, handLms, self.mpHands.HAND_CONNECTIONS, 
                                         # Joint Land Mark Color
                                         self.mpDraw.DrawingSpec(color=color, thickness=2, circle_radius=2),
                                         # Land Mark Line Connector Color
@@ -41,32 +43,4 @@ class handDetector():
                 hand_li.append(hand)
         return self.img, hand_li
     
-def track():
-    cap = cv2.VideoCapture(0)
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
-    ht = handDetector()
-    while True:
-        CurrentDir = os.path.dirname(os.path.realpath(__file__))
-        success, img = cap.read()
-        #img = Image.open(os.path.join(CurrentDir,"1hand.jpg"))
-        #img = Image.open(os.path.join(CurrentDir,"1handleft.jpg"))
-        #img = Image.open(os.path.join(CurrentDir,"1handright.jpg"))
-        #img = Image.open(os.path.join(CurrentDir,"2hand.jpg"))
-        #img = img.convert("RGB")
-        #img = np.asarray(img)
-        img, hands = ht.findHands(img)
-        print(hands)
-        if hands:
-            for i in hands:
-                label = i["label"]
-                lms = i["lms"]
-                cv2.putText(img,str(label),(ht.getCoord(lms[0]).x,ht.getCoord(lms[0]).y),
-                            cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2,cv2.LINE_AA)
 
-        cv2.imshow("Hand Tracking", img)
-        cv2.waitKey(1)
-
-
-if __name__ == "__main__":
-    track()

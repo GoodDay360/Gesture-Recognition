@@ -1,18 +1,3 @@
-# pygesture
-Pre-built OpenCV-Python/Mediapipe modules that easy to use and understand.
-# Table of contents
-- [Installation](#installation)
-- [Hand Track](#hand-track)
-
-# Installation
-```
-pip install pygesture
-```
-# Hand Track
-- Hand tracking technology with the help of Mediapipe.  
-- I know there a lot of stuff down there but trust me.  
-- Just read it one by one it easy to understand.
-```python
 from pygesture import handtrack
 import cv2
 
@@ -51,4 +36,3 @@ while True:
     
     # Wait in milliseconds before capture next frame.
     cv2.waitKey(1)
-```

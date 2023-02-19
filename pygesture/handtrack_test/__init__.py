@@ -5,7 +5,7 @@ import numpy as np
 
 currentDir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(currentDir,"function"))
-import number,heart,thumb,power,peace,ok,loveu
+from .function import number,heart,thumb,power,peace,ok,loveu
 
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
