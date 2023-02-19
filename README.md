@@ -1,6 +1,7 @@
 # pygesture
-Pre-built OpenCV-Python/Mediapipe modules that easy to use and understand.
-# Table of contents
+**Pre-built OpenCV-Python/Mediapipe modules that easy to use and understand.  
+For now it only had `Hand Track`. More features will be add in future.**
+# Table of Contents
 - [Installation](#installation)
 - [Hand Track](#hand-track)
 
@@ -10,6 +11,7 @@ pip install pygesture
 ```
 # Hand Track
 - Hand tracking technology with the help of Mediapipe.  
+- This also detect if it `Left or Right` Hand.
 - I know there a lot of stuff down there but trust me.  
 - Just read it one by one it easy to understand.
 ```python
@@ -37,7 +39,8 @@ while True:
     # hand: is the value of left or right hand and value of each landmarks on each hand.
     img, hand = ht.findHands(img)
     
-    # Print it out to see what going on.
+    # Print it out to see what going on. 
+    # This will return None if no hand detect. Make sure to add a check condition.
     print(hand)
     
     # "Hand Track" you can name it whatever you want. But other options may required.
