@@ -15,16 +15,16 @@ classifiers = [
 
 setup(
   name='pygesture',
-  version='1.0.0',
+  version='1.0.6',
   description='Pre-built OpenCV-Python/Mediapipe modules that easy to use and understand.',
   long_description=open('README.md').read() + '\n\n' + open('CHANGELOG.txt').read(),
   long_description_content_type='text/markdown',
-  url='https://github.com/GoodDay360/OptiPy',  
+  url='https://github.com/GoodDay360/pygesture',  
   author='GoodDay360',
   author_email='istartgame31@gmail.com',
   license='MIT', 
   classifiers=classifiers,
   keywords=['pygesture','library','module','gesture_recognition'], 
-  packages=find_packages(exclude=["dist","git","pygesture.egg-info"]),
+  packages=find_packages(exclude=["dist","git","pygesture.egg-info","assets"]),
   install_requires=required,
 )

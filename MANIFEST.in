@@ -1,1 +1,1 @@
-global-include *.md *.txt *.py
+global-include *.md *.txt *.py *.jpg *.png

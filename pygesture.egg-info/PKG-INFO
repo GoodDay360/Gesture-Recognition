@@ -1,3 +1,23 @@
+Metadata-Version: 2.1
+Name: pygesture
+Version: 1.0.6
+Summary: Pre-built OpenCV-Python/Mediapipe modules that easy to use and understand.
+Home-page: https://github.com/GoodDay360/pygesture
+Author: GoodDay360
+Author-email: istartgame31@gmail.com
+License: MIT
+Keywords: pygesture,library,module,gesture_recognition
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Information Technology
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # pygesture
 **Pre-built OpenCV-Python/Mediapipe modules that easy to use and understand.  
 For now it only had `Hand Track`. More features will be add in future.**
@@ -82,4 +102,8 @@ from pygesture import handtrack_test
     ]
 ```
 - ``Each index inside a list is the landmark it self. Start from [0,1,2,...]``
+
+
+
+
 
