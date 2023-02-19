@@ -52,3 +52,23 @@ while True:
     # Wait in milliseconds before capture next frame.
     cv2.waitKey(1)
 ```
+## Hand Vector
+# <img src="https://user-images.githubusercontent.com/59399625/219934003-aec18124-e0ea-4809-9735-429cee1a2275.png"  width="600" height="400">
+## Landmarks Coordinate  
+# <img src="https://user-images.githubusercontent.com/59399625/219934029-cbdf2a78-30fd-422c-83ca-baafa9bef087.png" width="400" height="400">  
+- ``Even though there no landmarks number specify.``
+```
+'lms': [
+        x: 0.2995750904083252
+        y: 0.7221927642822266
+        z: -4.386473335671326e-07,
+
+        x: 1.2995750904083252
+        y: 4.7221927642822266
+        z: -4.626473335671326e-07,
+
+        .....
+    ]
+```
+- ``Each index inside a list is the landmark it self. Start from [0,1,2,...]``
+
